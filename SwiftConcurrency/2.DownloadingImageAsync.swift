@@ -126,7 +126,6 @@ class DownloadingImageAsyncViewModel: ObservableObject {
     }
 }
 
-
 struct DownloadingImageAsyncBootcamp: View {
     
     @StateObject var vm = DownloadingImageAsyncViewModel()
