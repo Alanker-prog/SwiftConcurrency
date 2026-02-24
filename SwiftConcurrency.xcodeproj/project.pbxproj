@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		701B5B9A2F459BF3008EBF46 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701B5B992F459BF3008EBF46 /* SwiftUIView.swift */; };
+		701B5B9C2F4C4FF6008EBF46 /* RetainСycleARC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701B5B9B2F4C4FF6008EBF46 /* RetainСycleARC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		701B5B992F459BF3008EBF46 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		701B5B9B2F4C4FF6008EBF46 /* RetainСycleARC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RetainСycleARC.swift"; sourceTree = "<group>"; };
 		701D08F52E9E5030005355C5 /* SwiftConcurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftConcurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -38,6 +40,7 @@
 			isa = PBXGroup;
 			children = (
 				701B5B992F459BF3008EBF46 /* SwiftUIView.swift */,
+				701B5B9B2F4C4FF6008EBF46 /* RetainСycleARC.swift */,
 			);
 			path = "GCD ";
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				701B5B9A2F459BF3008EBF46 /* SwiftUIView.swift in Sources */,
+				701B5B9C2F4C4FF6008EBF46 /* RetainСycleARC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
