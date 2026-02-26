@@ -11,6 +11,7 @@
 		701B5B9C2F4C4FF6008EBF46 /* RetainСycleARC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701B5B9B2F4C4FF6008EBF46 /* RetainСycleARC.swift */; };
 		70871C222F4DED82001B813D /* AsyncAwaitWeakSelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70871C212F4DED82001B813D /* AsyncAwaitWeakSelf.swift */; };
 		70871C242F5067A3001B813D /* ConcurrentPerform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70871C232F5067A3001B813D /* ConcurrentPerform.swift */; };
+		70871C262F508213001B813D /* InitiallyInactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70871C252F508213001B813D /* InitiallyInactive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		701D08F52E9E5030005355C5 /* SwiftConcurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftConcurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70871C212F4DED82001B813D /* AsyncAwaitWeakSelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitWeakSelf.swift; sourceTree = "<group>"; };
 		70871C232F5067A3001B813D /* ConcurrentPerform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentPerform.swift; sourceTree = "<group>"; };
+		70871C252F508213001B813D /* InitiallyInactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiallyInactive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -47,6 +49,7 @@
 				701B5B9B2F4C4FF6008EBF46 /* RetainСycleARC.swift */,
 				70871C212F4DED82001B813D /* AsyncAwaitWeakSelf.swift */,
 				70871C232F5067A3001B813D /* ConcurrentPerform.swift */,
+				70871C252F508213001B813D /* InitiallyInactive.swift */,
 			);
 			path = "GCD ";
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			files = (
 				70871C222F4DED82001B813D /* AsyncAwaitWeakSelf.swift in Sources */,
 				70871C242F5067A3001B813D /* ConcurrentPerform.swift in Sources */,
+				70871C262F508213001B813D /* InitiallyInactive.swift in Sources */,
 				701B5B9A2F459BF3008EBF46 /* SwiftUIView.swift in Sources */,
 				701B5B9C2F4C4FF6008EBF46 /* RetainСycleARC.swift in Sources */,
 			);
