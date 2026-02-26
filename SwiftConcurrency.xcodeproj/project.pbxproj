@@ -10,6 +10,7 @@
 		701B5B9A2F459BF3008EBF46 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701B5B992F459BF3008EBF46 /* SwiftUIView.swift */; };
 		701B5B9C2F4C4FF6008EBF46 /* RetainСycleARC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701B5B9B2F4C4FF6008EBF46 /* RetainСycleARC.swift */; };
 		70871C222F4DED82001B813D /* AsyncAwaitWeakSelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70871C212F4DED82001B813D /* AsyncAwaitWeakSelf.swift */; };
+		70871C242F5067A3001B813D /* ConcurrentPerform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70871C232F5067A3001B813D /* ConcurrentPerform.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +18,7 @@
 		701B5B9B2F4C4FF6008EBF46 /* RetainСycleARC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RetainСycleARC.swift"; sourceTree = "<group>"; };
 		701D08F52E9E5030005355C5 /* SwiftConcurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftConcurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70871C212F4DED82001B813D /* AsyncAwaitWeakSelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitWeakSelf.swift; sourceTree = "<group>"; };
+		70871C232F5067A3001B813D /* ConcurrentPerform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentPerform.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -44,6 +46,7 @@
 				701B5B992F459BF3008EBF46 /* SwiftUIView.swift */,
 				701B5B9B2F4C4FF6008EBF46 /* RetainСycleARC.swift */,
 				70871C212F4DED82001B813D /* AsyncAwaitWeakSelf.swift */,
+				70871C232F5067A3001B813D /* ConcurrentPerform.swift */,
 			);
 			path = "GCD ";
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70871C222F4DED82001B813D /* AsyncAwaitWeakSelf.swift in Sources */,
+				70871C242F5067A3001B813D /* ConcurrentPerform.swift in Sources */,
 				701B5B9A2F459BF3008EBF46 /* SwiftUIView.swift in Sources */,
 				701B5B9C2F4C4FF6008EBF46 /* RetainСycleARC.swift in Sources */,
 			);
