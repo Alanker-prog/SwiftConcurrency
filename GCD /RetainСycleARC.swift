@@ -1,5 +1,5 @@
 //
-//  RetainСycleARC.swift
+//  RetainCycleARC.swift
 //  SwiftConcurrency
 //
 //  Created by Алан Парастаев on 23.02.2026.
@@ -7,48 +7,76 @@
 
 import SwiftUI
 import Combine
+import Foundation
+
+// MARK: - Теория: Retain Cycle и захват self
 
 /*
- 🟢 (Двойной closure) - Даже если self используется во вложенном closure, внешний тоже его захватывает.
- 
- 🟢 Даже если нет Retain cycle нужет [weak self]❕
- Представим: это UIViewController пользователь нажал "назад" и экран должен удалиться ,но загрузка ещё идёт
- ◉ Без[weak self] будет жить до завершения загрузки
- ◉ С [weak self] если экран удалился, блок не выполнится
- 
- 🟢 Ключевой момент
-  ◉ DispatchQueue.async = временное удержание
-  ◉ Timer / stored closure = возможный retain cycle
- 
- 🟢 После [weak self]
-   ◉ .self становится опциональным self?, потому что объект может быть уже освобождён к моменту выполнения замыкания. ◉ Поэтому нужно безопасно его развернуть.
-   ◉ Есть два варианта:
-    1️⃣ guard let self = self else { return } - Если self nil → весь блок прекращается
-    🔥 guard let self создаёт ллокальную strong ссылку и она живет до конца closure
-    ‼️ НЕ ИСПОЛЬЗОВАТЬ guard С await если await длится 10 секунд — объект будет жить 10 секунд.
-    👇 ИСПОЛЬЗУЕМ В С await MainActor.run ✅
- 
-    Task { [weak self] in
-        let data = await service.fetch()
-        await MainActor.run {
-            self?.handle(data)
-        }
-    }
- 
-    2️⃣ self?.tick() - Если self nil → пропускается только конкретная строка
- 
- 🟢 [unowned self]
-    ◉ Используется, когда вы гарантированно уверены, что self не будет уничтожен.
-    ◉ Если объект будет освобождён — приложение упадёт (crash).🔴
- */
+ 🔴 Retain Cycle возникает, когда:
+ объект A сильно удерживает объект B,
+ а объект B сильно удерживает объект A.
 
-//MARK: 1️⃣ GCD — загрузка изображения с сети
+ Классический пример — stored closure:
+
+ final class ViewModel {
+
+     var closure: (() -> Void)?
+
+     func setup() {
+         closure = {
+             print(self.name) // self захватывается strongly
+         }
+     }
+ }
+
+ ViewModel → closure (strong)
+ closure → self (strong)
+ = retain cycle
+*/
+
+/*
+ 🔶 Временное сильное удержание (без цикла)
+
+ Если self используется внутри Task или DispatchQueue,
+ объект будет жить до завершения блока.
+
+ Это НЕ retain cycle, но продление жизни объекта.
+*/
+
+/*
+ 🟢 Когда нужен [weak self]
+
+ - Когда closure хранится в свойстве (stored closure)
+ - Когда используется Timer
+ - Когда self хранит cancellable (Combine)
+ - Когда Task может жить дольше объекта
+*/
+
+/*
+ 🟢 После [weak self]:
+
+ self становится optional (self?),
+ потому что объект может быть освобождён.
+*/
+
+/*
+ 🟢 [unowned self]
+
+ Используется, если вы на 100% уверены,
+ что self будет жить дольше closure.
+
+ Если объект освобождён → crash.
+*/
+
+// MARK: - 1️⃣ GCD — загрузка изображения
+
 final class ProfileViewController: UIViewController {
 
     private let imageView = UIImageView()
 
     func loadAvatar(from url: URL) {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+
             guard let data = try? Data(contentsOf: url),
                   let image = UIImage(data: data) else { return }
 
@@ -58,13 +86,19 @@ final class ProfileViewController: UIViewController {
         }
     }
 }
-/*📌 Почему [weak self] GCD    ⚠ иногда    Блок может пережить объект
-Контроллер может закрыться до завершения загрузки.Без weak фоновой блок удержит VC.
 
-⚠ Подводный камень
-Если сделать guard let self = self в первом блоке — контроллер будет жить до конца загрузки.*/
+/*
+ 📌 Почему [weak self]?
 
-//MARK: 2️⃣ Combine
+ DispatchQueue может выполниться позже,
+ чем деинициализируется контроллер.
+
+ Это не retain cycle,
+ а продление жизни объекта.
+*/
+
+// MARK: - 2️⃣ Combine
+
 final class CombineExample {
 
     private var cancellables = Set<AnyCancellable>()
@@ -81,17 +115,26 @@ final class CombineExample {
             .store(in: &cancellables)
     }
 }
-/*
-🔴 Combine почти всегда нужен [weak self] self хранит cancellable. Без weak — retain cycle.*/
 
-//MARK: 3️⃣ async/await
+/*
+ 🔴 Возможный retain cycle:
+
+ self → cancellable
+ cancellable → closure
+ closure → self
+*/
+
+// MARK: - 3️⃣ async / await
+
 final class AsyncExample {
 
     private var value = 0
 
     func start() {
         Task { [weak self] in
+
             try? await Task.sleep(nanoseconds: 1_000_000_000)
+
             await MainActor.run {
                 self?.value = 20
                 print("Async:", self?.value ?? 0)
@@ -99,13 +142,14 @@ final class AsyncExample {
         }
     }
 }
-/*📌 Почему [weak self] Task может жить дольше объекта.✅ ИСПОЛЬЗУЕМ В С await MainActor.run ✅
- ⚠️ в 90% случаев люди пишут: Task { await loadData() } ,
- */
 
+/*
+ 📌 Task может жить дольше объекта.
+ Это не retain cycle,
+ но продление жизни.
+*/
 
-//MARK: 4️⃣ Timer
-import Foundation
+// MARK: - 4️⃣ Timer
 
 final class TimerExample {
 
@@ -113,7 +157,8 @@ final class TimerExample {
     private var counter = 0
 
     func start() {
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 1,
+                                     repeats: true) { [weak self] _ in
             self?.counter += 1
             print("Timer:", self?.counter ?? 0)
         }
@@ -123,10 +168,18 @@ final class TimerExample {
         timer?.invalidate()
     }
 }
-/*📌 Почему [weak self]  Timer удерживает closure Если self хранит timer → цикл.*/
 
-//MARK: 5️⃣ UIAction / кнопки
-class VCButton: UIViewController {
+/*
+ 📌 Retain cycle:
+
+ self → timer
+ timer → closure
+ closure → self
+*/
+
+// MARK: - 5️⃣ UIAction / UIButton
+
+final class VCButton: UIViewController {
 
     lazy var button: UIButton = {
         let button = UIButton()
@@ -140,4 +193,9 @@ class VCButton: UIViewController {
         print("Button tapped")
     }
 }
-//
+
+/*
+ Возможен retain cycle,
+ если closure захватывает self strongly.
+ Использование [weak self] безопаснее.
+*/
