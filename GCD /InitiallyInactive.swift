@@ -1,9 +1,3 @@
-//
-//  InitiallyInactive.swift
-//  SwiftConcurrency
-//
-//  Created by Алан Парастаев on 26.02.2026.
-//
 
 //
 //  InitiallyInactive.swift
