@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		701B5B9A2F459BF3008EBF46 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701B5B992F459BF3008EBF46 /* SwiftUIView.swift */; };
 		701B5B9C2F4C4FF6008EBF46 /* RetainСycleARC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701B5B9B2F4C4FF6008EBF46 /* RetainСycleARC.swift */; };
+		7022E1E92F51BD7D00995CA2 /* DispatchBarrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7022E1E82F51BD7D00995CA2 /* DispatchBarrier.swift */; };
 		70871C222F4DED82001B813D /* AsyncAwaitWeakSelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70871C212F4DED82001B813D /* AsyncAwaitWeakSelf.swift */; };
 		70871C242F5067A3001B813D /* ConcurrentPerform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70871C232F5067A3001B813D /* ConcurrentPerform.swift */; };
 		70871C262F508213001B813D /* InitiallyInactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70871C252F508213001B813D /* InitiallyInactive.swift */; };
@@ -20,6 +21,7 @@
 		701B5B992F459BF3008EBF46 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		701B5B9B2F4C4FF6008EBF46 /* RetainСycleARC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RetainСycleARC.swift"; sourceTree = "<group>"; };
 		701D08F52E9E5030005355C5 /* SwiftConcurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftConcurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7022E1E82F51BD7D00995CA2 /* DispatchBarrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchBarrier.swift; sourceTree = "<group>"; };
 		70871C212F4DED82001B813D /* AsyncAwaitWeakSelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitWeakSelf.swift; sourceTree = "<group>"; };
 		70871C232F5067A3001B813D /* ConcurrentPerform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentPerform.swift; sourceTree = "<group>"; };
 		70871C252F508213001B813D /* InitiallyInactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiallyInactive.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				70871C252F508213001B813D /* InitiallyInactive.swift */,
 				70871C272F508D9C001B813D /* DispatchWorkItem.swift */,
 				70871C292F518CD9001B813D /* DispatchGroupAndConcurrent.swift */,
+				7022E1E82F51BD7D00995CA2 /* DispatchBarrier.swift */,
 			);
 			path = "GCD ";
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				70871C222F4DED82001B813D /* AsyncAwaitWeakSelf.swift in Sources */,
 				70871C2A2F518CD9001B813D /* DispatchGroupAndConcurrent.swift in Sources */,
 				70871C242F5067A3001B813D /* ConcurrentPerform.swift in Sources */,
+				7022E1E92F51BD7D00995CA2 /* DispatchBarrier.swift in Sources */,
 				70871C282F508D9C001B813D /* DispatchWorkItem.swift in Sources */,
 				70871C262F508213001B813D /* InitiallyInactive.swift in Sources */,
 				701B5B9A2F459BF3008EBF46 /* SwiftUIView.swift in Sources */,
