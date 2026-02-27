@@ -13,6 +13,7 @@
 		70871C242F5067A3001B813D /* ConcurrentPerform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70871C232F5067A3001B813D /* ConcurrentPerform.swift */; };
 		70871C262F508213001B813D /* InitiallyInactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70871C252F508213001B813D /* InitiallyInactive.swift */; };
 		70871C282F508D9C001B813D /* DispatchWorkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70871C272F508D9C001B813D /* DispatchWorkItem.swift */; };
+		70871C2A2F518CD9001B813D /* DispatchGroupAndConcurrent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70871C292F518CD9001B813D /* DispatchGroupAndConcurrent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		70871C232F5067A3001B813D /* ConcurrentPerform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentPerform.swift; sourceTree = "<group>"; };
 		70871C252F508213001B813D /* InitiallyInactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiallyInactive.swift; sourceTree = "<group>"; };
 		70871C272F508D9C001B813D /* DispatchWorkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchWorkItem.swift; sourceTree = "<group>"; };
+		70871C292F518CD9001B813D /* DispatchGroupAndConcurrent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchGroupAndConcurrent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -53,6 +55,7 @@
 				70871C232F5067A3001B813D /* ConcurrentPerform.swift */,
 				70871C252F508213001B813D /* InitiallyInactive.swift */,
 				70871C272F508D9C001B813D /* DispatchWorkItem.swift */,
+				70871C292F518CD9001B813D /* DispatchGroupAndConcurrent.swift */,
 			);
 			path = "GCD ";
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70871C222F4DED82001B813D /* AsyncAwaitWeakSelf.swift in Sources */,
+				70871C2A2F518CD9001B813D /* DispatchGroupAndConcurrent.swift in Sources */,
 				70871C242F5067A3001B813D /* ConcurrentPerform.swift in Sources */,
 				70871C282F508D9C001B813D /* DispatchWorkItem.swift in Sources */,
 				70871C262F508213001B813D /* InitiallyInactive.swift in Sources */,
