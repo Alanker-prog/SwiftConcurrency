@@ -17,6 +17,7 @@
 		70871C282F508D9C001B813D /* DispatchWorkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70871C272F508D9C001B813D /* DispatchWorkItem.swift */; };
 		70871C2A2F518CD9001B813D /* DispatchGroupAndConcurrent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70871C292F518CD9001B813D /* DispatchGroupAndConcurrent.swift */; };
 		7096C05A2F52B65B001C23FD /* DispatchSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7096C0592F52B65B001C23FD /* DispatchSource.swift */; };
+		7096C05C2F52BBA2001C23FD /* MainFileGCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7096C05B2F52BBA2001C23FD /* MainFileGCD.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,12 +32,18 @@
 		70871C272F508D9C001B813D /* DispatchWorkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchWorkItem.swift; sourceTree = "<group>"; };
 		70871C292F518CD9001B813D /* DispatchGroupAndConcurrent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchGroupAndConcurrent.swift; sourceTree = "<group>"; };
 		7096C0592F52B65B001C23FD /* DispatchSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchSource.swift; sourceTree = "<group>"; };
+		7096C05B2F52BBA2001C23FD /* MainFileGCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFileGCD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		701D08F72E9E5030005355C5 /* SwiftConcurrency */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SwiftConcurrency;
+			sourceTree = "<group>";
+		};
+		7096C0602F52CD42001C23FD /* Operation */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Operation;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -55,6 +62,7 @@
 		701B5B982F459ADB008EBF46 /* GCD  */ = {
 			isa = PBXGroup;
 			children = (
+				7096C05B2F52BBA2001C23FD /* MainFileGCD.swift */,
 				701B5B992F459BF3008EBF46 /* SwiftUIView.swift */,
 				701B5B9B2F4C4FF6008EBF46 /* RetainСycleARC.swift */,
 				70871C212F4DED82001B813D /* AsyncAwaitWeakSelf.swift */,
@@ -72,6 +80,7 @@
 		701D08EC2E9E5030005355C5 = {
 			isa = PBXGroup;
 			children = (
+				7096C0602F52CD42001C23FD /* Operation */,
 				701B5B982F459ADB008EBF46 /* GCD  */,
 				701D08F72E9E5030005355C5 /* SwiftConcurrency */,
 				701D08F62E9E5030005355C5 /* Products */,
@@ -103,6 +112,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				701D08F72E9E5030005355C5 /* SwiftConcurrency */,
+				7096C0602F52CD42001C23FD /* Operation */,
 			);
 			name = SwiftConcurrency;
 			packageProductDependencies = (
@@ -161,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70871C222F4DED82001B813D /* AsyncAwaitWeakSelf.swift in Sources */,
+				7096C05C2F52BBA2001C23FD /* MainFileGCD.swift in Sources */,
 				7096C05A2F52B65B001C23FD /* DispatchSource.swift in Sources */,
 				70871C2A2F518CD9001B813D /* DispatchGroupAndConcurrent.swift in Sources */,
 				70871C242F5067A3001B813D /* ConcurrentPerform.swift in Sources */,
