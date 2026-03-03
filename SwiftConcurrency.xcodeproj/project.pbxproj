@@ -36,7 +36,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		701BA0EB2F56BB3E00CCE328 /* ConcurrencyFundamentals */ = {
+		701BA1422F56F68300CCE328 /* ConcurrencyFundamentals */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ConcurrencyFundamentals;
 			sourceTree = "<group>";
@@ -85,7 +85,7 @@
 		701D08EC2E9E5030005355C5 = {
 			isa = PBXGroup;
 			children = (
-				701BA0EB2F56BB3E00CCE328 /* ConcurrencyFundamentals */,
+				701BA1422F56F68300CCE328 /* ConcurrencyFundamentals */,
 				7096C0602F52CD42001C23FD /* Operation */,
 				701B5B982F459ADB008EBF46 /* GCD  */,
 				701D08F72E9E5030005355C5 /* SwiftConcurrency */,
@@ -117,7 +117,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				701BA0EB2F56BB3E00CCE328 /* ConcurrencyFundamentals */,
+				701BA1422F56F68300CCE328 /* ConcurrencyFundamentals */,
 				701D08F72E9E5030005355C5 /* SwiftConcurrency */,
 				7096C0602F52CD42001C23FD /* Operation */,
 			);
